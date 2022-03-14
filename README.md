@@ -3,36 +3,62 @@
 此项目为2020年毕业设计项目，旨在编写一个为JAVA教学提供帮助的软件，可以将用户在Eclipse上的操作，都记录下来。形成一个编程行为监控的插件，之后增加了数据传输平台，将收集到的数据传输到数据平台用于分析学生真实的编程学习行为。在2020年一个班级使用了一个学期，经过各种bug和需求的发现，演化为现在的3.1版本。
 
 通过查询大量eclipse代码，寻找其界面各种监听器，从而获取数据，这些数据包括
-1.UI
+1. UI
+
 	Eclipse-Start  开始监控
+	
 	Eclipse-End 结束监控
+	
 	Eclipse-Leave   时间段   从Eclipse主界面切换出去，最小化操作等（可能包含其他Eclipse内部操作）
-2.Resource
+2. Resource
+
 	Resource-NewProject 创建项目
+	
 	Resource-RemoveProject 删除项目
+	
 	Resource-NewFolder 新建文件夹     
+	
 	Resource-RemoveFolder 删除文件夹
+	
 	Resource-NewFile 新建文件
+	
 	Resource-RemoveFile 删除文件
-		包含项目文件夹及文件名称
-3.Debug
+	包含项目文件夹及文件名称
+	
+3. Debug
+
 	Debug-AddBreakpoint 添加断点
+	
 	Debug-RemoveBreakpoint 删除断点
+	
 	Debug-DebugOnServer 服务器上调试
+	
 	Debug-DebugOnApp  本地调试
+	
 	Debug-StepOver 调试过程
+	
 	Debug-StepInto 调试过程
-4.Run
+4. Run
+
 	Run-RunOnServer 服务器上运行
+	
 	Run-RunOnApp 本地运行
-5.Edit
+5. Edit
+
 	Edit-EditFile 文件编辑 （文件名，开始时间至结束时间，共持续，若持续过短时间，可能只是寻找目标文件）
+	
 	Edit-KeyEventTimes 键盘点击次数
+	
 	Edit-BackspaceTimes Backspace点击次数
+	
 	Edit-CodeAssistTimes 自动补全次数
+	
 	Edit-CodeFormatTimes 代码格式化次数
+	
 	Edit-PasteTimes 总粘贴次数
-   Edit-PastePY 粘贴内容过长位置偏移过小（粘贴内容，偏移）
+	
+	Edit-PastePY 粘贴内容过长位置偏移过小（粘贴内容，偏移）
+
 
 这些数据可以真实的反应学生学习状况。
 
