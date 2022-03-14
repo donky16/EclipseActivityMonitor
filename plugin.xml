@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension point="org.eclipse.ui.startup">
+   <startup class="eam.handlers.AutoStartHandler"/>
+</extension>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Sample Category"
+            id="EAM.commands.category">
+      </category>
+      <command
+      		name="loginCommand"
+            categoryId="EAM.commands.category"
+            id="EAM.commands.loginCommand">
+      </command>
+      <command
+            name="startCommand"
+            categoryId="EAM.commands.category"
+            id="EAM.commands.startCommand">
+      </command>
+      <command
+            name="endCommand"
+            categoryId="EAM.commands.category"
+            id="EAM.commands.endCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="EAM.commands.loginCommand"
+            class="eam.handlers.LoginHandler">
+      </handler>
+      <handler
+            commandId="EAM.commands.startCommand"
+            class="eam.handlers.StartHandler">
+      </handler>
+      <handler
+            commandId="EAM.commands.endCommand"
+            class="eam.handlers.StartHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="EAM.commands.startCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <Generic></Generic>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="监 控"
+               mnemonic="M"
+               id="EAM.menus.sampleMenu">
+            <command
+            	  name="注 册"
+            	  label="注 册"
+                  commandId="EAM.commands.loginCommand"
+                  id="EAM.menus.loginCommand"
+                  mnemonic="S"
+                  >
+            </command>
+            <command
+                  name="开始监控"
+                  label="开始监控"
+                  commandId="EAM.commands.startCommand"
+                  mnemonic="S"
+                  id="EAM.menus.startCommand">
+            </command>
+            <command
+                  name="结束监控"
+                  label="结束监控"
+                  commandId="EAM.commands.endCommand"
+                  mnemonic="S"
+                  id="EAM.menus.endCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="EAM.toolbars.sampleToolbar">
+            <command
+                  commandId="EAM.commands.sampleCommand"
+                  icon="icons/sample.png"
+                  tooltip="Say hello world"
+                  id="EAM.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
